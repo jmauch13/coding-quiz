@@ -146,9 +146,7 @@ function endGame() {
     return;
 }
 
-
-// Event triggers
-// Triggered when a <li> tag inside answerButtonLst <ul> is clicked
+// Check answer function
 function checkAnswer(event) {
     if (event.target != answerButtonLst){ 
 

@@ -1,17 +1,9 @@
-:root{
-    --btnBackground: #3a49f5;
-    --btnBackgroundHover: #414899;
-    --mainBackground: #36393f;
-    --mainTextColor: #ffffff;
-    --secondaryBackground: #4f545c;
-}
-
 body {
     position: relative;
     margin: 75px;
     min-height: 98vh;
-    background: var(--mainBackground);
-    color: var(--mainTextColor);
+    background-color: rgb(105, 105, 105);
+    color: white;
 }
 
 header {
@@ -26,8 +18,8 @@ header {
 #highscore-input-div > button,
 header button {
     text-decoration: none;
-    background: var(--btnBackground);
-    color: var(--mainTextColor);
+    background-color: blue;
+    color: white;
     border: 0;
     border-radius: 7px; 
     padding: 3px 10px 3px 10px;
@@ -65,8 +57,8 @@ main > button {
     margin: 3vh;
     width: max-content;
     padding: 0 10px 0 10px;
-    background: var(--btnBackground);
-    color: var(--mainTextColor);
+    background-color: blue;
+    color: white;
     border: 0;
     border-radius: 7px; 
     font-size: 2.4em;
@@ -82,8 +74,8 @@ main > ul li {
     width: max-content;
     min-width: 10vw;
     padding: 5px 10px 5px 10px;
-    background: var(--btnBackground);
-    color: var(--mainTextColor);
+    background-color: blue;
+    color: white;
     border: 0;
     border-radius: 7px; 
     font-size: 150%;
@@ -102,7 +94,7 @@ main > div > * {
 #display-highscore-div button:hover,
 body button:hover, 
 main > ul li:hover {
-    background: var(--btnBackgroundHover);
+    background-color: rgb(83, 83, 248);
     cursor: pointer;
 }
 
