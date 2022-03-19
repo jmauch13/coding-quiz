@@ -1,3 +1,4 @@
+/* style of start page, question pages and end/highscore pages */
 body {
     position: relative;
     margin: 75px;
@@ -6,6 +7,7 @@ body {
     color: white;
 }
 
+/* styling for highscore and timer */
 header {
     display: flex;
     align-content: space-between;
@@ -26,11 +28,13 @@ header button {
     font-size: 1em;
 }
 
+/* timer */
 header p {
     padding: 3px 10px 3px 10px; 
     margin-left: 15px;
 }
 
+/* staert styling for main section elements */
 main {
     display: flex;
     flex-direction: column;
@@ -89,7 +93,9 @@ main > div {
 main > div > * {
     margin: 1rem;
 }
+/* end styling for main section elements */
 
+/* hover styling */
 #submit-highscore-div button:hover,
 #display-highscore-div button:hover,
 body button:hover, 
@@ -98,6 +104,7 @@ main > ul li:hover {
     cursor: pointer;
 }
 
+/* start styling for end of game/highscores elements */
 #highscore-input-div {
     display: flex;
     justify-content: center;
@@ -115,3 +122,48 @@ main > ul li:hover {
 #highscore-input-div > input {
     width:30%;
 }
+/* end styling for main section elements */
+
+/* media queries section */
+@media screen and (max-width: 980px) {
+    #display-highscore-div > button,
+    #highscore-input-div > button,
+    header button {
+        font-size: 0.8em;
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    header p {
+        margin-left: 5px;
+        padding: 15px;
+        
+    }
+
+    main h1 {
+        font-size: 1.8em;
+        padding-top: 15px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    main > div, #instructions {
+        font-size: 1em;
+        text-align: center;
+        padding: 0;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    main > button {
+        font-size: 1.8em;
+    }
+
+    main > ul {
+        align-self: auto;
+    }
+}
+/* end stylesheet */
+
