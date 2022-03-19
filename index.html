@@ -9,12 +9,12 @@
 </head>
 <body>
     <header>
-        <button id="viewHighscoresBtn">View Highscores</button> <!-- links to view highscores -->
+        <button id="highscoresBtn">View Highscores</button> <!-- links to view highscores -->
         <p style="display: none">Time: <span id="timerTag">9999</span></p> <!-- hidden timer displayed during quiz -->
     </header>
     <main> <!-- container holding questions and stuff -->
-        <h1 id="title">Coding Quiz Challenge</h1> <!-- header for questions in quiz as well -->
-        <p id="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!</p>
+        <h1 id="title">Coding Quiz</h1> <!-- header for questions in quiz as well -->
+        <p id="instructions">Welcome! Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!</p>
         <button id="startBtn">Start Quiz</button> <!-- starts quiz -->
         <ul>
             <!-- dynamically fill this with list items containing answers -->
@@ -22,10 +22,10 @@
         <div id="submit-highscore-div"> <!-- end screen to submit info -->
             <h1>All Done!</h1> <!-- Confirm end of quiz -->
             <p>Your final score is <span id="scoreSpan">999</span>.</p> <!-- display final score -->
-            <div id="highscore-input-div"> <!-- forum to enter name to submit score -->
+            <div id="highscore-input-div"> <!-- form to enter name to submit score -->
                 <p>Enter Name:</p>
-            [aria-label= type="text" id="fname" name="fname" value="">
-                <button id="submitHighscoreBtn">Submit</button>
+            <input type="text" id="fname" name="fname" value="">
+                <button id="submitHighscore">Submit</button>
             </div>
         </div>
         <div id="display-highscore-div"> <!-- holds the highscores -->
@@ -33,8 +33,8 @@
             <ol>
                 <!-- Dynamic <li> tags go here -->
             </ol>
-            <button id="goBackBtn">Go Back</button> <!-- Button to return to main pre-quiz view -->
-            <button id="clearHighscoreBtn">Clear Highscores</button> <!-- Resets local memory -->
+            <button id="goBack">Go Back</button> <!-- Button to return to main pre-quiz view -->
+            <button id="clearHighscores">Clear Highscores</button> <!-- Resets local memory -->
         </div>
     </main>
 <script type="text/javascript" src="./assets/coding-quiz.js"></script>  </script>

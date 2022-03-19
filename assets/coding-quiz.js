@@ -1,29 +1,31 @@
 //html elements that frequently get grabbed
 var timerTag = document.querySelector(`#timerTag`); //span containing timer numbers inside the paragraph tag at the top (numbers only)
 var timerPTag  = document.querySelector(`header`).children[1]; //paragraph tag at the top of the screen in the nav area that displays time
-var submitHighscoreBtn = document.querySelector(`#submitHighscoreBtn`); //submit button that shows at end of game to submit name
-var viewHighscoresBtn = document.querySelector(`#viewHighscoresBtn`); //view highscore button at the front page of the quiz game
-var clearHighscoreBtn = document.querySelector(`#clearHighscoreBtn`); //button in the highscore view that clears all local storage
+var submitHighscoreBtn = document.querySelector(`#submitHighscore`); //submit button that shows at end of game to submit name
+var viewHighscoresBtn = document.querySelector(`#highscoresBtn`); //view highscore button at the front page of the quiz game
+var clearHighscoreBtn = document.querySelector(`#clearHighscores`); //button in the highscore view that clears all local storage
 var answerButtonLst = document.body.querySelector(`ul`); //list that will hold the dynamic answer list items
-var goBackHighscoreBtn = document.querySelector(`#goBackBtn`); //go back button in the highscore view
+var goBackHighscoreBtn = document.querySelector(`#goBack`); //go back button in the highscore view
 var startBtn = document.querySelector(`#startBtn`); //button you first see when the page loads (starts game)
 var titleTag = document.querySelector(`#title`) //h1 tag that gets used almost entire time for questions and titles
 
 //question and answer object with arrays
 var questionObj = { //question object that holds all the parts of questions
     questions: [ //questions can just be added to by adding on a string to end of array
-        `Inside which HTML element do we put the JavaScript?`,
-        `What is the correct JavaScript syntax to change the content of the HTML element below? <p id="demo">This is a demonstration.</p>`,
-        `Where is the correct place to insert a JavaScript?`,
+        `What will the following statements display? 
+         var test=5+7;
+         document.write(test);`,
+        `Which name is acceptable for a JavaScript variable?`,
+        `What character is used to separate parameters from each other?`,
         `What is the correct syntax for referring to an external script called "xxx.js"?`,
-        `How do you write "Hello World" in an alert box?`,
+        `When is the "return" statement most frequently used?`,
     ],
     answers: [ //answers are in a 2d array because multiple answers for 1 questions
-        [`<js>`, `correct:<script>`, `<javascript>`, `<scripting>`],
-        [`document.getElement("p").innerHTML = "Hello World!";`, `#demo.innerHTML = "Hello World!";`, `correct:document.getElementById("demo").innerHTML = "Hello World!";`, `document.getElementByName("p").innerHTML = "Hello World!";`],
-        [`The <head> section`, `Both the <head> section and the <body> section are correct`, `correct:The <body> section`, `The <footer> section`], //uses `correct:` so that even if answer has the word `correct` its not flagged as correct answer
+        [`5+7`, `correct:12`, `Test`, `57`],
+        [`correct:_module`, `total%sum`, `1tv`, `firstnumber`],
+        [`&`, `:`, `;`, `correct:,`], 
         [`correct:<script src="xxx.js">`, `<script name="xxx.js">`, `<script href="xxx.js">`, `<script link="xxx.js">`],
-        [`msgBox("Hello World");`, `alertBox("Hello World");`, `correct:alert("Hello World");`, `msg("Hello World");`] //to pull out correct: newStr = substring(7,questionObj.answers[index].length)
+        [`to stop a loop`, `to add a pop-up window to the screen`, `correct:to make a calculation and receive the result`, `to input data`] 
     ] //to denote a correct answer simply add prefix `correct:` onto the correct string.
 }
 
