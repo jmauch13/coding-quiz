@@ -3,8 +3,8 @@ body {
     position: relative;
     margin: 75px;
     min-height: 98vh;
-    background-color: rgb(105, 105, 105);
-    color: white;
+    background-color: rgb(128, 128, 128);
+    color: azure;
 }
 
 /* styling for highscore and timer */
@@ -16,12 +16,12 @@ header {
     height: 100%;
 }
 
-#display-highscore-div > button,
-#highscore-input-div > button,
+#display-highScore-div > button,
+#highScore-input-div > button,
 header button {
     text-decoration: none;
-    background-color: blue;
-    color: white;
+    background-color: rgb(69, 6, 187);
+    color: azure;
     border: 0;
     border-radius: 7px; 
     padding: 3px 10px 3px 10px;
@@ -61,8 +61,8 @@ main > button {
     margin: 3vh;
     width: max-content;
     padding: 0 10px 0 10px;
-    background-color: blue;
-    color: white;
+    background-color: rgb(69, 6, 187);
+    color: azure;
     border: 0;
     border-radius: 7px; 
     font-size: 2.4em;
@@ -78,8 +78,8 @@ main > ul li {
     width: max-content;
     min-width: 10vw;
     padding: 5px 10px 5px 10px;
-    background-color: blue;
-    color: white;
+    background-color: rgb(69, 6, 187);
+    color: azure;
     border: 0;
     border-radius: 7px; 
     font-size: 150%;
@@ -96,38 +96,38 @@ main > div > * {
 /* end styling for main section elements */
 
 /* hover styling */
-#submit-highscore-div button:hover,
-#display-highscore-div button:hover,
+#submit-highScore-div button:hover,
+#display-highScore-div button:hover,
 body button:hover, 
 main > ul li:hover {
-    background-color: rgb(83, 83, 248);
+    background-color: rgb(103, 103, 248);
     cursor: pointer;
 }
 
 /* start styling for end of game/highscores elements */
-#highscore-input-div {
+#highScore-input-div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#highscore-input-div > *{
+#highScore-input-div > *{
     margin: 0.5rem;
 }
 
-#highscore-input-div > p {
+#highScore-input-div > p {
     display: inline;
 }
 
-#highscore-input-div > input {
+#highScore-input-div > input {
     width:30%;
 }
 /* end styling for main section elements */
 
 /* media queries section */
 @media screen and (max-width: 980px) {
-    #display-highscore-div > button,
-    #highscore-input-div > button,
+    #display-highScore-div > button,
+    #highScore-input-div > button,
     header button {
         font-size: 0.8em;
         padding: 10px;

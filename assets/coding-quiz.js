@@ -1,11 +1,11 @@
 // html elements that are used frequently
 var timerTag = document.querySelector(`#timerTag`); 
 var timerPTag  = document.querySelector(`header`).children[1]; 
-var submitHighscoreBtn = document.querySelector(`#submitHighscore`); 
-var viewHighscoresBtn = document.querySelector(`#highscoresBtn`); 
-var clearHighscoreBtn = document.querySelector(`#clearHighscores`); 
+var submitHighScoreBtn = document.querySelector(`#submitHighScore`); 
+var viewHighScoresBtn = document.querySelector(`#highScoresBtn`); 
+var clearHighScoreBtn = document.querySelector(`#clearHighScores`); 
 var answerButtonLst = document.body.querySelector(`ul`); 
-var goBackHighscoreBtn = document.querySelector(`#goBack`); 
+var goBackHighScoreBtn = document.querySelector(`#goBack`); 
 var startBtn = document.querySelector(`#startBtn`); 
 var titleTag = document.querySelector(`#title`) 
 
@@ -42,13 +42,13 @@ function setUpGame() {
     timerTag.textContent = globalTimerPreset; 
 
     // Hides elements that may be visible after a previous round
-    document.querySelector(`#display-highscore-div`).style.display = `none`; 
+    document.querySelector(`#display-highScore-div`).style.display = `none`; 
 
     titleTag.textContent = `Coding Quiz Challenge`; 
 
     titleTag.style.display = `block`; 
     document.querySelector(`#instructions`).style.display = `block`; 
-    viewHighscoresBtn.style.display = `block`; 
+    viewHighScoresBtn.style.display = `block`; 
     startBtn.style.display = `block`; 
 
     return;
@@ -59,7 +59,7 @@ function startGame() {
     gameEnded = false; 
     questionIndexNumber = 0; 
 
-    viewHighscoresBtn.style.display = `none` 
+    viewHighScoresBtn.style.display = `none` 
     startBtn.style.display = `none`; 
     document.querySelector(`#instructions`).style.display = `none`; 
     timerPTag.style.display = `block`; 
@@ -141,7 +141,7 @@ function endGame() {
 
     // Show score and form to enter name for highscore storage
     document.querySelector(`#scoreSpan`).textContent = score; 
-    document.querySelector(`#submit-highscore-div`).style.display = `block`; 
+    document.querySelector(`#submit-highScore-div`).style.display = `block`; 
 
     return;
 }
@@ -160,23 +160,23 @@ function checkAnswer(event) {
     return;
 }
 
-// Highscore button clicked trigger
+// HighScore button clicked trigger
 function storeScoreAndName() {
-    var highscoreTextbox = document.querySelector(`input`); 
+    var highScoreTextbox = document.querySelector(`input`); 
     var tempArrayOfObjects = []; 
 
-    if (highscoreTextbox.value != `` || highscoreTextbox.value != null) { 
+    if (highScoreTextbox.value != `` || highScoreTextbox.value != null) { 
         var tempObject = { // Initializes a object to put in the storage array
-            names: highscoreTextbox.value, 
+            names: highScoreTextbox.value, 
             scores: score, // Fill with users final score
         }
 
-        if(window.localStorage.getItem(`highscores`) == null) { 
+        if(window.localStorage.getItem(`highScores`) == null) { 
             tempArrayOfObjects.push(tempObject); 
-            window.localStorage.setItem(`highscores`, JSON.stringify(tempArrayOfObjects));
+            window.localStorage.setItem(`highScores`, JSON.stringify(tempArrayOfObjects));
 
         } else { 
-            tempArrayOfObjects = JSON.parse(window.localStorage.getItem(`highscores`)); 
+            tempArrayOfObjects = JSON.parse(window.localStorage.getItem(`highScores`)); 
 
             for (let index = 0; index <= tempArrayOfObjects.length; index++) { 
                 if (index == tempArrayOfObjects.length) { 
@@ -187,33 +187,33 @@ function storeScoreAndName() {
                     break; 
                 }
             }
-            window.localStorage.setItem(`highscores`, JSON.stringify(tempArrayOfObjects)) 
+            window.localStorage.setItem(`highScores`, JSON.stringify(tempArrayOfObjects)) 
         }
         document.querySelector(`input`).value = ``; 
         score = 0; 
 
-        showHighscores(); 
+        showHighScores(); 
     }
 
     return;
 }
 
 // Triggered when viewHighscoresBtn is clicked, hides all elements and displays the highscore board 
-function showHighscores() {
+function showHighScores() {
     // Elements needed to hide
     titleTag.style.display = `none`; 
     startBtn.style.display = `none`; 
     document.querySelector(`header`).children[0].style.display = `none`; 
     document.querySelector(`#instructions`).style.display = `none`;
-    document.querySelector(`#submit-highscore-div`).style.display = `none`; 
+    document.querySelector(`#submit-highScore-div`).style.display = `none`; 
 
-    // Show highscore 
-    document.querySelector(`#display-highscore-div`).style.display = `block`; 
+    // Show highScore 
+    document.querySelector(`#display-highScore-div`).style.display = `block`; 
 
     tempOrderedList = document.querySelector(`ol`); 
     tempOrderedList.innerHTML = `` 
 
-    tempArrayOfObjects = JSON.parse(window.localStorage.getItem(`highscores`)); 
+    tempArrayOfObjects = JSON.parse(window.localStorage.getItem(`highScores`)); 
     if (tempArrayOfObjects != null) { 
         for (let index = 0; index < tempArrayOfObjects.length; index++) { 
             var newLi = document.createElement(`li`) 
@@ -223,15 +223,15 @@ function showHighscores() {
 
     } else { 
         var newLi = document.createElement(`p`) 
-        newLi.textContent = `No Highscores` 
+        newLi.textContent = `No HighScores` 
         tempOrderedList.appendChild(newLi); 
     }
 
     return;
 }
 
-// Triggered when clearHighscoreBtn is clicked 
-function clearHighscores() {
+// Triggered when clearHighScoreBtn is clicked 
+function clearHighScores() {
     document.querySelector(`ol`).innerHTML = ``; 
     window.localStorage.clear(); 
 
@@ -244,10 +244,10 @@ function clearHighscores() {
 function init() {
     startBtn.addEventListener(`click`, startGame); 
     answerButtonLst.addEventListener(`click`, checkAnswer); 
-    viewHighscoresBtn.addEventListener(`click`, showHighscores); 
-    submitHighscoreBtn.addEventListener(`click`, storeScoreAndName); 
-    clearHighscoreBtn.addEventListener(`click`, clearHighscores); 
-    goBackHighscoreBtn.addEventListener(`click`, setUpGame); 
+    viewHighScoresBtn.addEventListener(`click`, showHighScores); 
+    submitHighScoreBtn.addEventListener(`click`, storeScoreAndName); 
+    clearHighScoreBtn.addEventListener(`click`, clearHighScores); 
+    goBackHighScoreBtn.addEventListener(`click`, setUpGame); 
 
     setUpGame(); 
 
